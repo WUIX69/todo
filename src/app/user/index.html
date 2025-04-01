@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sticky Wall - Todo App</title>
+    <link rel="stylesheet" href="../../../public/vendor/fomantic-ui/dist/semantic.min.css">
+    <link rel="stylesheet" href="../../../public/assets/css/global.css">
+    <style>
+        section.todos {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: start;
+            align-items: center;
+
+            gap: 1rem;
+            padding: 1rem;
+        }
+
+        section.todos .todo-item {
+            height: 300px;
+            width: 300px;
+
+            border-radius: 8px !important;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
+
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+
+        section.todos .todo-item .content {
+            padding: 2rem;
+            overflow-y: hidden;
+        }
+
+        section.todos .todo-item .content .description {
+            display: block;
+            max-height: 200px;
+            /* Approximately 3 lines of text */
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        section.todos .todo-item.yellow {
+            background-color: #fff9c4 !important;
+        }
+
+        section.todos .todo-item.blue {
+            background-color: #e3f2fd !important;
+        }
+
+        section.todos .todo-item.pink {
+            background-color: #fce4ec !important;
+        }
+
+        section.todos .todo-item.orange {
+            background-color: #ffe0b2 !important;
+        }
+
+        section.todos .add-card {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: white !important;
+            border: 2px dashed #ddd !important;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        section.todos .add-card:hover {
+            border-color: #999 !important;
+        }
+
+        section.todos .add-card .content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="standalone-container">
+        <!-- Task Flyout -->
+        <div class="ui flyout">
+            <i class="close icon"></i>
+            <div class="ui header">
+                <i class="question icon"></i>
+                <div class="content">
+                    Archive Old Messages
+                </div>
+            </div>
+            <div class="content">
+                <p>Your inbox is getting full, would you like us to enable automatic archiving of old messages?</p>
+            </div>
+            <div class="actions">
+                <div class="ui red cancel button">
+                    <i class="remove icon"></i>
+                    No
+                </div>
+                <div class="ui green ok button">
+                    <i class="checkmark icon"></i>
+                    Yes
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="site-container pusher">
+        <aside class="site-sidebar">
+            <div class="menu-header">
+                <h2 class="ui header">Menu</h2>
+                <i class="bars icon"></i>
+            </div>
+
+            <div class="ui search">
+                <div class="ui icon input fluid">
+                    <input type="text" placeholder="Search...">
+                    <i class="search icon"></i>
+                </div>
+            </div>
+
+            <div class="tasks-section">
+                <h5 class="ui header">TASKS</h5>
+                <div class="ui vertical fluid menu">
+                    <a class="item">
+                        <i class="calendar alternate outline icon"></i>
+                        Upcoming
+                        <div class="ui label">12</div>
+                    </a>
+                    <a class="item">
+                        <i class="calendar day icon"></i>
+                        Today
+                        <div class="ui label">5</div>
+                    </a>
+                    <a class="item">
+                        <i class="calendar icon"></i>
+                        Calendar
+                    </a>
+                    <a class="active item">
+                        <i class="sticky note icon"></i>
+                        Sticky Wall
+                    </a>
+                </div>
+            </div>
+
+            <div class="tasks-section">
+                <h5 class="ui header">LISTS</h5>
+                <div class="ui vertical fluid menu">
+                    <a class="item">
+                        <i class="circle red icon"></i>
+                        Personal
+                        <div class="ui label">3</div>
+                    </a>
+                    <a class="item">
+                        <i class="circle blue icon"></i>
+                        Work
+                        <div class="ui label">3</div>
+                    </a>
+                    <a class="item">
+                        <i class="circle yellow icon"></i>
+                        List 1
+                        <div class="ui label">3</div>
+                    </a>
+                    <a class="item">
+                        <i class="plus icon"></i>
+                        Add New List
+                    </a>
+                </div>
+            </div>
+
+            <div class="tasks-section">
+                <h5 class="ui header">TAGS</h5>
+                <div class="ui labels">
+                    <a class="ui label">Tag 1</a>
+                    <a class="ui label">Tag 2</a>
+                    <a class="ui basic label">
+                        <i class="plus icon"></i>
+                        Add Tag
+                    </a>
+                </div>
+            </div>
+
+            <div class="ui divider"></div>
+
+            <div class="ui vertical fluid menu">
+                <a class="item">
+                    <i class="settings icon"></i>
+                    Settings
+                </a>
+                <a class="item">
+                    <i class="sign-out icon"></i>
+                    Sign out
+                </a>
+            </div>
+        </aside>
+
+        <main class="site-main">
+            <section class="header">
+                <h1 class="ui header">Sticky Wall Harlem</h1>
+            </section>
+
+            <section class="todos">
+                <!-- Social Media Card -->
+                <div class="ui card todo-item yellow">
+                    <div class="content">
+                        <div class="header">Social Media</div>
+                        <div class="description">
+                            <div class="ui list">
+                                <div class="item">- Plan social content</div>
+                                <div class="item">- Build content calendar</div>
+                                <div class="item">- Plan promotion and distribution</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Content Strategy Card -->
+                <div class="ui card todo-item blue">
+                    <div class="content">
+                        <div class="header">Content Strategy</div>
+                        <div class="description">
+                            Would need time to get insights (goals, personas, budget, audits), but after, it would be
+                            good to focus on assembling my team (start with SEO specialist, then perhaps an email
+                            marketer?). Also need to brainstorm on tooling.
+
+                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sed nulla repudiandae sequi nam
+                            similique maxime minus fuga. Rem, quos maiores non fuga incidunt expedita placeat et
+                            deserunt ex, nihil optio?
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Email A/B Tests Card -->
+                <div class="ui card todo-item pink">
+                    <div class="content">
+                        <div class="header">Email A/B Tests</div>
+                        <div class="description">
+                            <div class="ui list">
+                                <div class="item">- Subject lines</div>
+                                <div class="item">- Sender</div>
+                                <div class="item">- CTA</div>
+                                <div class="item">- Sending times</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Banner Ads Card -->
+                <div class="ui card todo-item orange">
+                    <div class="content">
+                        <div class="header">Banner Ads</div>
+                        <div class="description">
+                            Notes from the workshop:
+                            <div class="ui list">
+                                <div class="item">- Sizing matters</div>
+                                <div class="item">- Choose distinctive imagery</div>
+                                <div class="item">- The landing page must match the display ad</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Social Media Card -->
+                <div class="ui card todo-item yellow">
+                    <div class="content">
+                        <div class="header">Social Media</div>
+                        <div class="description">
+                            <div class="ui list">
+                                <div class="item">- Plan social content</div>
+                                <div class="item">- Build content calendar</div>
+                                <div class="item">- Plan promotion and distribution</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Content Strategy Card -->
+                <div class="ui card todo-item blue">
+                    <div class="content">
+                        <div class="header">Content Strategy</div>
+                        <div class="description">
+                            Would need time to get insights (goals, personas, budget, audits), but after, it would be
+                            good to focus on assembling my team (start with SEO specialist, then perhaps an email
+                            marketer?). Also need to brainstorm on tooling.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Email A/B Tests Card -->
+                <div class="ui card todo-item pink">
+                    <div class="content">
+                        <div class="header">Email A/B Tests</div>
+                        <div class="description">
+                            <div class="ui list">
+                                <div class="item">- Subject lines</div>
+                                <div class="item">- Sender</div>
+                                <div class="item">- CTA</div>
+                                <div class="item">- Sending times</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Banner Ads Card -->
+                <div class="ui card todo-item orange">
+                    <div class="content">
+                        <div class="header">Banner Ads</div>
+                        <div class="description">
+                            Notes from the workshop:
+                            <div class="ui list">
+                                <div class="item">- Sizing matters</div>
+                                <div class="item">- Choose distinctive imagery</div>
+                                <div class="item">- The landing page must match the display ad</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Add New Card -->
+                <div class="ui card todo-item add-card">
+                    <div class="content">
+                        <i class="plus huge icon"></i>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script src="../../../public/lib/jquery/jquery-3.7.1.min.js"></script>
+    <script src="../../../public/vendor/fomantic-ui/dist/semantic.min.js"></script>
+    <script>
+        $(function () {
+            // Initialize UI components
+            $('.ui.search').search();
+
+            // Add hover effect to cards
+            $('.sticky-card').hover(
+                function () {
+                    $(this).css('transform', 'translateY(-5px)');
+                    $(this).css('transition', 'transform 0.3s ease');
+                },
+                function () {
+                    $(this).css('transform', 'translateY(0)');
+                }
+            );
+
+            // $('.ui.flyout').flyout('toggle');
+
+            // Open flyout when add-card is clicked
+            $('.add-card').on('click', function () {
+                // console.log('Add card is clicked, flyout should be toggled now');
+                $('.ui.flyout').flyout('toggle');
+            });
+        });
+    </script>
+</body>
+
+</html>
