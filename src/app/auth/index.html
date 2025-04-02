@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login - Todo App</title>
+    <link rel="stylesheet" href="../../../public/vendor/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../../public/vendor/fomantic-ui/dist/semantic.min.css">
+    <link rel="stylesheet" href="../../../public/assets/css/global.css">
+    <link rel="stylesheet" href="../../../public/assets/css/auth/style.css">
+</head>
+
+<body>
+
+    <div class="shared-standalone-content">
+        <!-- Standalone components here -->
+    </div>
+
+    <div class="site-container">
+        <div class="site-background">
+            <video src="../../../public/assets/vid/valorant.mp4" autoplay muted loop></video>
+        </div>
+        <main class="site-main">
+            <div class="container-xl">
+                <section class="auth">
+                    <div class="auth-header">
+                        <a href="../landing/index.html">
+                            <div class="ui image header">
+                                <img src="../../../public/assets/img/logo.jpg" class="rounded-circle image">
+                                <div class="content">
+                                    TO<span class="text">DO</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="auth-card card">
+                        <div class="ui teal header">
+                            Sign in
+                        </div>
+                        <form class="ui large form">
+                            <div class="field">
+                                <label for="email">Email</label>
+                                <div class="ui input">
+                                    <input type="text" name="email" placeholder="E-mail address">
+                                </div>
+                            </div>
+                            <div class="field">
+                                <label for="password">Password</label>
+                                <div class="ui input">
+                                    <input type="password" name="password" placeholder="Password">
+                                </div>
+                            </div>
+                            <div class="field clearing">
+                                <div class="ui checkbox remember-me">
+                                    <input type="checkbox" name="remember-me">
+                                    <label>Remember me</label>
+                                </div>
+                                <div class="ui text forgot-password">
+                                    <a href="#">Forgot Password?</a>
+                                </div>
+                            </div>
+                            <button class="ui fluid large teal submit button" type="submit">Continue</button>
+                            <div class="ui error message"></div>
+                        </form>
+                        <div class="ui text text-center">
+                            Don't have an account? <a href="register.html">Sign Up</a>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script src="../../../public/lib/jquery/jquery.min.js"></script>
+    <script src="../../../public/vendor/fomantic-ui/dist/semantic.min.js"></script>
+</body>
+
+</html>
