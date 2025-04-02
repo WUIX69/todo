@@ -5,22 +5,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sticky Wall - Todo App</title>
+    <link rel="stylesheet" href="../../../public/vendor/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="../../../public/vendor/fomantic-ui/dist/semantic.min.css">
     <link rel="stylesheet" href="../../../public/assets/css/global.css">
+    <link rel="stylesheet" href="../../../public/assets/css/user/style.css">
     <style>
         section.todos {
             display: flex;
             flex-wrap: wrap;
             justify-content: start;
             align-items: center;
-
             gap: 1rem;
-            padding: 1rem;
         }
 
         section.todos .todo-item {
             height: 300px;
-            width: 300px;
+            /* width: 300px; */
 
             border-radius: 8px !important;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
@@ -189,7 +189,7 @@
             <div class="ui divider"></div>
 
             <div class="ui vertical fluid menu">
-                <a class="item">
+                <a class="item" href="settings.html">
                     <i class="settings icon"></i>
                     Settings
                 </a>
@@ -201,141 +201,147 @@
         </aside>
 
         <main class="site-main">
-            <section class="header">
-                <h1 class="ui header">Sticky Wall Harlem</h1>
-            </section>
+            <div class="container-xl">
+                <section class="header">
+                    <h1 class="ui header">Sticky Wall</h1>
+                    <small>Manage your tasks and lists</small>
+                </section>
 
-            <section class="todos">
-                <!-- Social Media Card -->
-                <div class="ui card todo-item yellow">
-                    <div class="content">
-                        <div class="header">Social Media</div>
-                        <div class="description">
-                            <div class="ui list">
-                                <div class="item">- Plan social content</div>
-                                <div class="item">- Build content calendar</div>
-                                <div class="item">- Plan promotion and distribution</div>
+                <section class="todos">
+                    <!-- Social Media Card -->
+                    <div class="ui card todo-item yellow">
+                        <div class="content">
+                            <div class="header">Social Media</div>
+                            <div class="description">
+                                <div class="ui list">
+                                    <div class="item">- Plan social content</div>
+                                    <div class="item">- Build content calendar</div>
+                                    <div class="item">- Plan promotion and distribution</div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- Content Strategy Card -->
-                <div class="ui card todo-item blue">
-                    <div class="content">
-                        <div class="header">Content Strategy</div>
-                        <div class="description">
-                            Would need time to get insights (goals, personas, budget, audits), but after, it would be
-                            good to focus on assembling my team (start with SEO specialist, then perhaps an email
-                            marketer?). Also need to brainstorm on tooling.
+                    <!-- Content Strategy Card -->
+                    <div class="ui card todo-item blue">
+                        <div class="content">
+                            <div class="header">Content Strategy</div>
+                            <div class="description">
+                                Would need time to get insights (goals, personas, budget, audits), but after, it would
+                                be
+                                good to focus on assembling my team (start with SEO specialist, then perhaps an email
+                                marketer?). Also need to brainstorm on tooling.
 
-                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sed nulla repudiandae sequi nam
-                            similique maxime minus fuga. Rem, quos maiores non fuga incidunt expedita placeat et
-                            deserunt ex, nihil optio?
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Email A/B Tests Card -->
-                <div class="ui card todo-item pink">
-                    <div class="content">
-                        <div class="header">Email A/B Tests</div>
-                        <div class="description">
-                            <div class="ui list">
-                                <div class="item">- Subject lines</div>
-                                <div class="item">- Sender</div>
-                                <div class="item">- CTA</div>
-                                <div class="item">- Sending times</div>
+                                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sed nulla repudiandae sequi
+                                nam
+                                similique maxime minus fuga. Rem, quos maiores non fuga incidunt expedita placeat et
+                                deserunt ex, nihil optio?
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- Banner Ads Card -->
-                <div class="ui card todo-item orange">
-                    <div class="content">
-                        <div class="header">Banner Ads</div>
-                        <div class="description">
-                            Notes from the workshop:
-                            <div class="ui list">
-                                <div class="item">- Sizing matters</div>
-                                <div class="item">- Choose distinctive imagery</div>
-                                <div class="item">- The landing page must match the display ad</div>
+                    <!-- Email A/B Tests Card -->
+                    <div class="ui card todo-item pink">
+                        <div class="content">
+                            <div class="header">Email A/B Tests</div>
+                            <div class="description">
+                                <div class="ui list">
+                                    <div class="item">- Subject lines</div>
+                                    <div class="item">- Sender</div>
+                                    <div class="item">- CTA</div>
+                                    <div class="item">- Sending times</div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- Social Media Card -->
-                <div class="ui card todo-item yellow">
-                    <div class="content">
-                        <div class="header">Social Media</div>
-                        <div class="description">
-                            <div class="ui list">
-                                <div class="item">- Plan social content</div>
-                                <div class="item">- Build content calendar</div>
-                                <div class="item">- Plan promotion and distribution</div>
+                    <!-- Banner Ads Card -->
+                    <div class="ui card todo-item orange">
+                        <div class="content">
+                            <div class="header">Banner Ads</div>
+                            <div class="description">
+                                Notes from the workshop:
+                                <div class="ui list">
+                                    <div class="item">- Sizing matters</div>
+                                    <div class="item">- Choose distinctive imagery</div>
+                                    <div class="item">- The landing page must match the display ad</div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- Content Strategy Card -->
-                <div class="ui card todo-item blue">
-                    <div class="content">
-                        <div class="header">Content Strategy</div>
-                        <div class="description">
-                            Would need time to get insights (goals, personas, budget, audits), but after, it would be
-                            good to focus on assembling my team (start with SEO specialist, then perhaps an email
-                            marketer?). Also need to brainstorm on tooling.
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Email A/B Tests Card -->
-                <div class="ui card todo-item pink">
-                    <div class="content">
-                        <div class="header">Email A/B Tests</div>
-                        <div class="description">
-                            <div class="ui list">
-                                <div class="item">- Subject lines</div>
-                                <div class="item">- Sender</div>
-                                <div class="item">- CTA</div>
-                                <div class="item">- Sending times</div>
+                    <!-- Social Media Card -->
+                    <div class="ui card todo-item yellow">
+                        <div class="content">
+                            <div class="header">Social Media</div>
+                            <div class="description">
+                                <div class="ui list">
+                                    <div class="item">- Plan social content</div>
+                                    <div class="item">- Build content calendar</div>
+                                    <div class="item">- Plan promotion and distribution</div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- Banner Ads Card -->
-                <div class="ui card todo-item orange">
-                    <div class="content">
-                        <div class="header">Banner Ads</div>
-                        <div class="description">
-                            Notes from the workshop:
-                            <div class="ui list">
-                                <div class="item">- Sizing matters</div>
-                                <div class="item">- Choose distinctive imagery</div>
-                                <div class="item">- The landing page must match the display ad</div>
+                    <!-- Content Strategy Card -->
+                    <div class="ui card todo-item blue">
+                        <div class="content">
+                            <div class="header">Content Strategy</div>
+                            <div class="description">
+                                Would need time to get insights (goals, personas, budget, audits), but after, it would
+                                be
+                                good to focus on assembling my team (start with SEO specialist, then perhaps an email
+                                marketer?). Also need to brainstorm on tooling.
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- Add New Card -->
-                <div class="ui card todo-item add-card">
-                    <div class="content">
-                        <i class="plus huge icon"></i>
+                    <!-- Email A/B Tests Card -->
+                    <div class="ui card todo-item pink">
+                        <div class="content">
+                            <div class="header">Email A/B Tests</div>
+                            <div class="description">
+                                <div class="ui list">
+                                    <div class="item">- Subject lines</div>
+                                    <div class="item">- Sender</div>
+                                    <div class="item">- CTA</div>
+                                    <div class="item">- Sending times</div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </section>
+
+                    <!-- Banner Ads Card -->
+                    <div class="ui card todo-item orange">
+                        <div class="content">
+                            <div class="header">Banner Ads</div>
+                            <div class="description">
+                                Notes from the workshop:
+                                <div class="ui list">
+                                    <div class="item">- Sizing matters</div>
+                                    <div class="item">- Choose distinctive imagery</div>
+                                    <div class="item">- The landing page must match the display ad</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Add New Card -->
+                    <div class="ui card todo-item add-card">
+                        <div class="content">
+                            <i class="plus huge icon"></i>
+                        </div>
+                    </div>
+                </section>
+            </div>
         </main>
     </div>
 
     <!-- Scripts -->
     <script src="../../../public/lib/jquery/jquery-3.7.1.min.js"></script>
     <script src="../../../public/vendor/fomantic-ui/dist/semantic.min.js"></script>
-    <script>
+    <script type="text/javascript">
         $(function () {
             // Initialize UI components
             $('.ui.search').search();

@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings - Todo App</title>
+    <link rel="stylesheet" href="../../../public/vendor/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../../public/vendor/fomantic-ui/dist/semantic.min.css">
+    <link rel="stylesheet" href="../../../public/assets/css/global.css">
+    <link rel="stylesheet" href="../../../public/assets/css/user/style.css">
+    <style>
+        /*###### SETTINGS (Settings Navigation) ######*/
+        section.settings .settings-nav .nav {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        section.settings .settings-nav .nav .nav-link {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+
+            font-size: 0.9rem;
+            padding: 1rem;
+
+            border-radius: 12px;
+            color: #6c757d;
+            transition: all 0.3s ease;
+            text-align: left;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        section.settings .settings-nav .nav .nav-link:not(.active):hover {
+            background-color: #f8f9fa;
+            color: #2c3e50;
+        }
+
+        section.settings .settings-nav .nav .nav-link.active {
+            color: white;
+            box-shadow: 0 4px 15px rgba(40, 167, 69, 0.2);
+        }
+
+        /*###### SETTINGS (Settings Navigation) END ######*/
+
+        /*###### SETTINGS (Tab Content) ######*/
+        section.settings .tab-content .tab-header {
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid #eee !important;
+            padding-bottom: 1rem;
+        }
+
+        section.settings .tab-content .tab-header h4 {
+            font-size: 1.5rem;
+        }
+
+        section.settings .tab-content .tab-header p {
+            font-size: 0.87rem;
+        }
+
+        /*###### SETTINGS (Tab Content) END ######*/
+
+        /*###### SETTINGS (Profile) ######*/
+        section.settings #profile .ui.form .field .url-inputs {
+            display: flex;
+            flex-direction: column;
+            align-items: start;
+            gap: 0.3rem;
+        }
+
+        /*###### SETTINGS (Profile) END ######*/
+
+        /*###### SETTINGS (Notifications) ######*/
+        section.settings #notifications .notification-item {
+            margin-bottom: 1rem;
+        }
+
+        /*###### SETTINGS (Notifications) END ######*/
+    </style>
+</head>
+
+<body>
+
+    <div class="standalone-container">
+        <!-- Standalone Components here -->
+    </div>
+
+    <div class="site-container pusher">
+        <aside class="site-sidebar">
+            <div class="menu-header">
+                <h2 class="ui header">Menu</h2>
+                <i class="bars icon"></i>
+            </div>
+
+            <div class="ui search">
+                <div class="ui icon input fluid">
+                    <input type="text" placeholder="Search...">
+                    <i class="search icon"></i>
+                </div>
+            </div>
+
+            <div class="tasks-section">
+                <h5 class="ui header">TASKS</h5>
+                <div class="ui vertical fluid menu">
+                    <a class="item">
+                        <i class="calendar alternate outline icon"></i>
+                        Upcoming
+                        <div class="ui label">12</div>
+                    </a>
+                    <a class="item">
+                        <i class="calendar day icon"></i>
+                        Today
+                        <div class="ui label">5</div>
+                    </a>
+                    <a class="item">
+                        <i class="calendar icon"></i>
+                        Calendar
+                    </a>
+                    <a class="item" href="index.html">
+                        <i class="sticky note icon"></i>
+                        Sticky Wall
+                    </a>
+                </div>
+            </div>
+
+            <div class="tasks-section">
+                <h5 class="ui header">LISTS</h5>
+                <div class="ui vertical fluid menu">
+                    <a class="item">
+                        <i class="circle red icon"></i>
+                        Personal
+                        <div class="ui label">3</div>
+                    </a>
+                    <a class="item">
+                        <i class="circle blue icon"></i>
+                        Work
+                        <div class="ui label">3</div>
+                    </a>
+                    <a class="item">
+                        <i class="circle yellow icon"></i>
+                        List 1
+                        <div class="ui label">3</div>
+                    </a>
+                    <a class="item">
+                        <i class="plus icon"></i>
+                        Add New List
+                    </a>
+                </div>
+            </div>
+
+            <div class="tasks-section">
+                <h5 class="ui header">TAGS</h5>
+                <div class="ui labels">
+                    <a class="ui label">Tag 1</a>
+                    <a class="ui label">Tag 2</a>
+                    <a class="ui basic label">
+                        <i class="plus icon"></i>
+                        Add Tag
+                    </a>
+                </div>
+            </div>
+
+            <div class="ui divider"></div>
+
+            <div class="ui vertical fluid menu">
+                <a class="active item">
+                    <i class="settings icon"></i>
+                    Settings
+                </a>
+                <a class="item">
+                    <i class="sign-out icon"></i>
+                    Sign out
+                </a>
+            </div>
+        </aside>
+
+        <main class="site-main">
+            <div class="container-xl">
+                <section class="header">
+                    <h1 class="ui header">Settings</h1>
+                    <small>Customize your Todo app experience</small>
+                </section>
+                <section class="settings">
+                    <div class="row g-4">
+                        <div class="col-md-3">
+                            <div class="card settings-nav">
+                                <div class="nav flex-column nav-pills card-body" role="tablist">
+                                    <button class="nav-link active" data-bs-toggle="pill" data-bs-target="#profile">
+                                        <span class="material-icons-sharp">person</span>Profile
+                                    </button>
+                                    <button class="nav-link" data-bs-toggle="pill" data-bs-target="#account">
+                                        <span class="material-icons-sharp">lock</span>Account
+                                    </button>
+                                    <button class="nav-link" data-bs-toggle="pill" data-bs-target="#notifications">
+                                        <span class="material-icons-sharp">notifications</span>Notifications
+                                    </button>
+                                    <button class="nav-link" data-bs-toggle="pill" data-bs-target="#preferences">
+                                        <span class="material-icons-sharp">tune</span>Preferences
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-9">
+                            <div class="card">
+                                <div class="tab-content p-4 card-body">
+                                    <!-- Profile Settings -->
+                                    <div class="tab-pane fade show active" id="profile">
+                                        <div class="tab-header">
+                                            <h4 class="mb-0">Profile</h4>
+                                            <p class="text-muted">This is how others will see you on the site.</p>
+                                        </div>
+                                        <form class="ui form">
+                                            <!-- Profile Picture -->
+                                            <div class="field">
+                                                <div class="avatar-upload text-center mb-3">
+                                                    <img src="../../../public/assets/img/users/profile.jpg"
+                                                        alt="Profile Picture" class="rounded-circle" width="200"
+                                                        height="200">
+                                                    <div class="upload-button">
+                                                        <i class="bi bi-camera-fill"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="field">
+                                                <label for="username">Username</label>
+                                                <input class="ui input" type="text" placeholder="Enter your username"
+                                                    name="username">
+                                                <div class="description">This is your public display name. It can be
+                                                    your
+                                                    real name
+                                                    or a pseudonym. You
+                                                    can only change this once every 30 days.</div>
+                                            </div>
+                                            <div class="field">
+                                                <label for="password">Password</label>
+                                                <input class="ui input" type="password" name="password"
+                                                    placeholder="Enter new password">
+                                                <div class="description">Your password must be at least 8 characters
+                                                    long and
+                                                    contain
+                                                    at least one
+                                                    uppercase letter, one lowercase letter, and one number.</div>
+                                            </div>
+                                            <div class="field">
+                                                <label for="email">Email Address</label>
+                                                <input class="ui input" type="email" placeholder="Enter your email"
+                                                    name="email">
+                                                <div class="description">You can manage verified email addresses in your
+                                                    email
+                                                    settings.</div>
+                                            </div>
+                                            <div class="field">
+                                                <label for="bio">Bio</label>
+                                                <textarea class="ui input" placeholder="Enter your bio"
+                                                    name="bio"></textarea>
+                                                <div class="description">Tell us about yourself. You can @mention other
+                                                    users and
+                                                    organizations to link to them.</div>
+                                            </div>
+                                            <div class="field">
+                                                <label>URLs</label>
+                                                <div class="description">Add links to your website, blog, or social
+                                                    media profiles.
+                                                </div>
+                                                <div class="url-inputs">
+                                                    <input class="ui input" type="text" placeholder="Enter your URLs">
+                                                    <input class="ui input" type="text" placeholder="Enter your URLs">
+                                                    <button type="button" class="ui mini basic button add-url-btn"
+                                                        style="margin: 0 !important; width: 100px !important;"><i
+                                                            class="add icon"></i>
+                                                        Add
+                                                        URL</button>
+                                                </div>
+                                            </div>
+                                            <div class="actions mt-4">
+                                                <button class="ui reset basic button" type="reset">Clear</button>
+                                                <button class="ui submit primary button" type="submit">Save
+                                                    Changes</button>
+                                            </div>
+                                        </form>
+                                    </div>
+
+                                    <!-- Account Settings -->
+                                    <div class="tab-pane fade" id="account">
+                                        <div class="tab-header">
+                                            <h4 class="mb-0">Account Security</h4>
+                                            <p class="text-muted">Manage your password and account security settings.
+                                            </p>
+                                        </div>
+                                        <form class="ui form">
+                                            <div class="field">
+                                                <label for="currentPassword">Current Password</label>
+                                                <input class="ui input" type="password" name="currentPassword"
+                                                    placeholder="Enter your current password">
+                                            </div>
+                                            <div class="field">
+                                                <label for="newPassword">New Password</label>
+                                                <input class="ui input" type="password" name="newPassword"
+                                                    placeholder="Enter your new password">
+                                            </div>
+                                            <div class="field">
+                                                <label for="confirmPassword">Confirm Password</label>
+                                                <input class="ui input" type="password" name="confirmPassword"
+                                                    placeholder="Enter your confirm password">
+                                            </div>
+                                            <div class="actions mt-4">
+                                                <button class="ui reset basic button" type="reset">Clear</button>
+                                                <button type="submit" class="ui submit primary button">Update
+                                                    Password</button>
+                                            </div>
+                                        </form>
+                                    </div>
+
+                                    <!-- Notification Settings -->
+                                    <div class="tab-pane fade" id="notifications">
+                                        <div class="tab-header">
+                                            <h4 class="mb-0">Notifications</h4>
+                                            <p class="text-muted">Manage your notification preferences.</p>
+                                        </div>
+                                        <div
+                                            class="notification-item d-flex justify-content-between align-items-center">
+                                            <div>
+                                                <h6 class="mb-1">Email Notifications</h6>
+                                                <p class="text-muted mb-0 small">Receive email about your activity
+                                                </p>
+                                            </div>
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input" type="checkbox" checked>
+                                            </div>
+                                        </div>
+                                        <div
+                                            class="notification-item d-flex justify-content-between align-items-center">
+                                            <div>
+                                                <h6 class="mb-1">Push Notifications</h6>
+                                                <p class="text-muted mb-0 small">Receive push notifications</p>
+                                            </div>
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input" type="checkbox" checked>
+                                            </div>
+                                        </div>
+                                        <div
+                                            class="notification-item d-flex justify-content-between align-items-center">
+                                            <div>
+                                                <h6 class="mb-1">Recipe Updates</h6>
+                                                <p class="text-muted mb-0 small">Get notified about recipe updates
+                                                </p>
+                                            </div>
+                                            <div class="form-check form-switch">
+                                                <input class="form-check-input" type="checkbox">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Preferences Settings -->
+                                    <div class="tab-pane fade" id="preferences">
+                                        <div class="tab-header">
+                                            <h4 class="mb-0">Preferences</h4>
+                                            <p class="text-muted">Manage your preferences and settings.</p>
+                                        </div>
+                                        <form class="ui form">
+                                            <div class="field">
+                                                <label>Language</label>
+                                                <div class="ui floating selection dropdown">
+                                                    <input type="hidden" name="language">
+                                                    <i class="dropdown icon"></i>
+                                                    <div class="default text">Select Language</div>
+                                                    <div class="menu">
+                                                        <div class="item" data-value="en">English</div>
+                                                        <div class="item" data-value="es">Spanish</div>
+                                                        <div class="item" data-value="fr">French</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="field">
+                                                <label>Time Zone</label>
+                                                <div class="ui floating selection dropdown">
+                                                    <input type="hidden" name="timezone">
+                                                    <i class="dropdown icon"></i>
+                                                    <div class="default text">Select Time Zone</div>
+                                                    <div class="menu">
+                                                        <div class="item" data-value="utc+8">UTC+08:00 Manila</div>
+                                                        <div class="item" data-value="utc+0">UTC+00:00 London</div>
+                                                        <div class="item" data-value="utc-5">UTC-05:00 New York</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="field actions mt-4">
+                                                <button type="reset" class="ui reset basic button">Default</button>
+                                                <button type="submit" class="ui submit primary button">Save
+                                                    Preferences</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script src="../../../public/lib/jquery/jquery-3.7.1.min.js"></script>
+    <script src="../../../public/vendor/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="../../../public/vendor/fomantic-ui/dist/semantic.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            // Initialize checkboxes and toggles
+            $('.ui.checkbox').checkbox();
+            $('.ui.dropdown').dropdown();
+
+            // Theme selection
+            $('.ui.buttons .button').on('click', function () {
+                $(this).addClass('active').siblings().removeClass('active');
+
+                // Update theme preview
+                const theme = $(this).text().toLowerCase();
+                $('.theme-preview').removeClass('light dark sepia').addClass(theme);
+            });
+
+            // Color swatch selection
+            $('.color-swatch').on('click', function () {
+                $('.color-swatch').removeClass('active');
+                $(this).addClass('active');
+            });
+        });
+    </script>
+</body>
+
+</html>

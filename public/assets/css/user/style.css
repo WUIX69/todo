@@ -1,0 +1,45 @@
+aside.site-sidebar {
+    width: 260px;
+    background: white;
+    padding: 2rem;
+    margin: 0;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.05);
+}
+
+aside .menu-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+}
+
+aside .menu-header h2 {
+    margin: 0 !important;
+}
+
+aside .task-count {
+    color: #888;
+    font-size: 0.9em;
+}
+
+aside .tasks-section {
+    margin: 2rem 0;
+}
+
+main.site-main {
+    flex: 1;
+    margin: 0;
+    padding: 0;
+}
+
+main.site-main .container-xl {
+    padding: 2rem;
+}
+
+main section.header {
+    margin-bottom: 2rem;
+}
+
+main section.header h1 {
+    margin: 0 !important;
+}
